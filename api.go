@@ -18,7 +18,7 @@ func main() {
         username := r.FormValue("username")
         password := r.FormValue("password")
 		//caso o usuario tenha acesso 
-        if username == "admin" && password == "123456" {
+        if username == "" && password == "" {
             session := fmt.Sprintf("%s%d", username, time.Now().UnixNano())
             cookie := http.Cookie{
                 Name: "session",

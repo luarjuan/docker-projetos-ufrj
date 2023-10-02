@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    image: api.go
+    build:
+    # o local que está a pasta e o docfile respectivamente 
+      context: "."
+      dockerfile: "file.dockerfile"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
